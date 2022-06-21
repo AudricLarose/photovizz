@@ -2,6 +2,6 @@ numpy
 flask
 sklearn
 gunicorn
-tensorflow
+tensorflow-cpu
 keras
 joblib
