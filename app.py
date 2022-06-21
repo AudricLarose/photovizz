@@ -27,8 +27,11 @@ def tensorQuest(r,g,b):
 
 
 app=Flask(__name__)
+@app.route('/')
+def index():
+    return "hello"
 
-@app.route('/',methods=['GET'])
+@app.route('/predict',methods=['GET'])
 def index():
     r = int(request.args['r'])
     g = int(request.args['g'])
