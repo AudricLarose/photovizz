@@ -38,7 +38,7 @@ def predict():
     b = int(request.form.get('b'))
 
     print(r, g, b)
-    label = ["Blanc", "Bleu", "Cyan", "Gris", "Jaune", "Marron", "Orange", "Rose", "Rouge", "Vert", "Violet"]
+    label = ["Bleu", "Cyan", "Gris", "Jaune", "Marron", "Orange", "Rose", "Rouge", "Vert", "Violet"]
     maxcount=0
     maxiter=0;
     data_result =tensorQuest(r,g,b)
