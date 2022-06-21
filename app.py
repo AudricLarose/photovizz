@@ -32,7 +32,7 @@ def index():
     return "hello"
 
 @app.route('/predict',methods=['GET'])
-def index():
+def predict():
     r = int(request.args['r'])
     g = int(request.args['g'])
     b = int(request.args['b'])
