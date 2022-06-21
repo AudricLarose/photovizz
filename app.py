@@ -31,11 +31,11 @@ app=Flask(__name__)
 def index():
     return "hello"
 
-@app.route('/predict',methods=['GET'])
+@app.route('/predict',methods=['POST'])
 def predict():
-    r = int(request.args['r'])
-    g = int(request.args['g'])
-    b = int(request.args['b'])
+    r = int(request.form.get('r'))
+    g = int(request.form.get('g'))
+    b = int(request.form.get('b'))
 
     print(r, g, b)
     label = ["Blanc", "Bleu", "Cyan", "Gris", "Jaune", "Marron", "Orange", "Rose", "Rouge", "Vert", "Violet"]
@@ -48,7 +48,7 @@ def predict():
             maxiter =i
 
 
-    return jsonify(prediction=label[maxiter])
+    return jsonify({'prediction':str(label[maxiter])})
 
 if __name__=="__main__":
     app.run(debug=True)
